@@ -1,0 +1,23 @@
+const path = require('path');
+const notes = require('../db/db.json')
+const router = require('express').Router();
+const fs = require('fs');
+
+router.get("/notes", (req, res) => {
+    console.log(notes)
+    res.json(notes)
+})
+
+router.post("/notes", (req, res) => {
+    // const note = req.body;
+    const noteId = notes[notes.length - 1].id + 1
+    console.log(noteId)
+    const note = {id:noteId, title:req.body.title, text:req.body.text}
+    notes.push(note)
+    fs.writeFileSync(path.join(__dirname, "../db/db.json"), JSON.stringify(notes))
+    res.json(notes);
+})
+
+
+
+module.exports = router

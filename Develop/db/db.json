@@ -1,6 +1,1 @@
-[
-    {
-        "title":"Test Title",
-        "text":"Test text"
-    }
-]
+[{"id":1,"title":"Test Title","text":"Test text"},{"id":2,"title":"yes1@gmail.com","text":"password12345"},{"id":3,"title":"bye","text":"past"},{"id":4,"title":"new note","text":"hello"}]
